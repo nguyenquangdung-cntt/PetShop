@@ -1,0 +1,35 @@
+{
+  "name": "pet_shop",
+  "version": "1.0.0",
+  "description": "Website ban thu cung",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "nodemon --inspect src/index.js",
+    "watch": "node-sass --watch src/resources/scss/app.scss src/public/css/app.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Pet",
+    "Pet",
+    "shop"
+  ],
+  "author": "Nguyen Quang Dung",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "express": "^4.18.1",
+    "express-handlebars": "^6.0.5",
+    "express-session": "^1.17.3",
+    "method-override": "^3.0.0",
+    "morgan": "^1.10.0",
+    "mysql": "^2.18.1",
+    "sanitize": "^2.1.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.7",
+    "node-sass": "^7.0.1",
+    "nodemon": "^2.0.16",
+    "postcss": "^8.4.13",
+    "tailwindcss": "^3.0.24"
+  }
+}

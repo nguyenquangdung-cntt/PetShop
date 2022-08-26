@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="/css/app.css">
+	<script src="/js/app.js"></script>
+	<link rel="stylesheet" href="/font-web/css/all.css">
+	<link rel="stylesheet" href="/font-web/css/fontawesome.css">
+	<link rel="stylesheet" href="/font-web/css/brands.css">
+	<link rel="stylesheet" href="/font-web/css/solid.css">
+	<link rel="shortcut icon" href="/img/icon.jpg" type="image/x-icon">
+	<title>ADMIN</title>
+</head>
+<body>
+	<div class="flex">
+	  <div id="nav-productDetail" class="flex w-2/5 md:w-1/4 h-screen bg-white">
+	    <div class="mx-auto py-10">
+	      <h1 style="margin-left: 10px; color: #D2691E;" class="text-2xl font-bold mb-10 cursor-pointer text-[#EC5252] duration-150" style="color: #D2691E;"><a href="/admin">ADMIN</a></h1>
+	      <ul>
+	        <li class="flex space-x-2 mt-10 cursor-pointer hover:text-[#EC5252] duration-150">
+	          <a href="/admin" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Quản lý sản phẩm</a>
+	        </li>
+	        <li class="flex space-x-2 mt-10 cursor-pointer hover:text-[#EC5252] duration-150">
+	          <a href="/list" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Danh sách sản phẩm</a>
+	        </li>
+	        <li class="flex space-x-2 mt-10 cursor-pointer hover:text-[#EC5252] duration-150">
+	          <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Quản lý khách hàng</a>
+	        </li>
+	      </ul>
+	    </div>
+	  </div>
+	  {{#each products}}
+		<form id="form-add" action="/list/{{this.masp}}/update?_method=PUT" method="post">
+			<h1 id="title-add">Thông tin sản phẩm</h1>
+			<hr id="hr1" align="left" width="210px" size="1px" color="darkgrey"/>
+      <hr id="hr2" align="left" width="210px" size="1px" color="darkgrey"/>
+
+		    <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 mt-5 mx-7">
+		      <div class="grid grid-cols-1">
+		        <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Tên sản phẩm</label>
+		        <input class="py-2 px-3 rounded-lg border-2 border-gray-300 mt-1 focus:outline-none focus:ring-2 focus:ring-red-200 focus:border-transparent" id="tensp" name="tensp" type="text" value="{{this.tensp}}" />
+		      </div>
+		      <div class="grid grid-cols-1">
+		        <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Giá sản phẩm</label>
+		        <input class="py-2 px-3 rounded-lg border-2 border-gray-300 mt-1 focus:outline-none focus:ring-2 focus:ring-red-200 focus:border-transparent" id="giasp" name="giasp" type="text" value="{{this.giasp}}" />
+		      </div>
+		    </div>
+
+		   	<div class="grid grid-cols-1 mt-5 mx-7">
+		      <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Mô tả</label>
+            <textarea name="mota" id="mota" rows="7" class="autoexpand tracking-wide py-2 px-4 mb-3 leading-relaxed appearance-none block w-full border border-gray-300 rounded focus:outline-none focus:bg-white focus:ring-red-200"type="text">{{this.mota}}</textarea>
+		    </div>
+
+		    <div class="grid grid-cols-1 mt-5 mx-7">
+		      <div class="grid grid-cols-1">
+		        <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Hình ảnh</label>
+		        <input class="py-2 px-3 rounded-lg border-2 border-gray-300 mt-1 focus:outline-none focus:ring-2 focus:ring-red-200 focus:border-transparent" id="hinh" name="hinh" type="text" value="{{this.hinh}}" />
+		      </div>
+		    </div>
+
+
+		   	<div class="grid grid-cols-1 mt-5 mx-7">
+		      <div class="grid grid-cols-1">
+		        <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Loại sản phẩm</label>
+		        <input class="py-2 px-3 rounded-lg border-2 border-gray-300 mt-1 focus:outline-none focus:ring-2 focus:ring-red-200 focus:border-transparent" id="id_loai" name="id_loai" type="number" min="1" max="2" value="{{this.id_loai}}" />
+		      </div>
+		    </div>
+
+		    <div class='flex items-center justify-center  md:gap-8 gap-4 pt-5 pb-5'>
+		      <button type="submit" class='w-auto bg-blue-500 hover:bg-blue-300 rounded-lg shadow-xl font-medium text-white px-4 py-2'>Sửa sản phẩm</button>
+		    </div>
+		  </div>
+		</form>
+		{{/each}}
+	</div>
+</div>
+</body>
+</html>
+
+<style type="text/css">
+  #hr1{
+    margin-top: 10px;
+    width: 100%;
+  }
+  #hr2{
+    margin-top: 20px;
+    width: 100%;
+  }
+</style>

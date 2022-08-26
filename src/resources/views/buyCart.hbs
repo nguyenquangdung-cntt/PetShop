@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/app.css">
+  <script src="/js/app.js"></script>
+  <link rel="stylesheet" href="/font-web/css/all.css">
+  <link rel="stylesheet" href="/font-web/css/fontawesome.css">
+  <link rel="stylesheet" href="/font-web/css/brands.css">
+  <link rel="stylesheet" href="/font-web/css/solid.css">
+  <link rel="shortcut icon" href="/img/icon.jpg" type="image/x-icon">
+  <title>Pet Shop</title>
+</head>
+<body>
+  <div class="flex">
+    <div id="nav-productDetail" class="flex w-2/5 md:w-1/4 h-screen bg-white">
+      <div class="mx-auto py-10">
+        <h1 class="text-2xl font-bold mb-10 cursor-pointer text-[#EC5252] duration-150" style="color: #D2691E;"><a href="/">Pet Shop</a></h1>
+        <ul>
+          <li class="flex space-x-2 mt-10 cursor-pointer hover:text-[#EC5252] duration-150">
+            <a href="/" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"><i class="fas fa-home"></i> Home</a>
+          </li>
+          <li class="flex space-x-2 mt-10 cursor-pointer hover:text-[#EC5252] duration-150">
+            <a href="/product/Cat" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"><i class="fas fa-cat"></i> Shop Cat</a>
+          </li>
+          <li class="flex space-x-2 mt-10 cursor-pointer hover:text-[#EC5252] duration-150">
+            <a href="/product/Dog" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"><i class="fas fa-dog"></i> Shop Dog</a>
+          </li>
+          <li class="flex space-x-2 mt-10 cursor-pointer hover:text-[#EC5252] duration-150">
+            <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"><i class="fas fa-shopping-cart"></i> Giỏ hàng</a>
+          </li>
+          <li class="flex space-x-2 mt-10 cursor-pointer hover:text-[#EC5252] duration-150">
+            <a href="/login" class="block w-full px-5 py-3 text-center font-medium text-yellow-600 hover:bg-gray-100"> Log in </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div style="margin-top: 50px; margin-left: 50px;">
+      <h2 class="text-2xl font-extrabold tracking-tight text-gray-900">Giỏ hàng của bạn</h2>
+      <hr id="hr1" align="left" width="210px" size="1px" color="darkgrey"/>
+      <table class="max-w-5xl mx-auto table-auto" style="margin-top: 10px;">
+        <thead class="justify-between">
+          <tr class="bg-gray-800">
+            <th class="px-10 py-2">
+              <span class="text-gray-100 font-semibold">STT</span>
+            </th>
+            <th class="px-16 py-2">
+              <span class="text-gray-100 font-semibold">Hình</span>
+            </th>
+            <th class="px-16 py-2">
+              <span class="text-gray-100 font-semibold">Tên</span>
+            </th>
+          
+            <th class="px-16 py-2">
+              <span class="text-gray-100 font-semibold">Giá</span>
+            </th>
+
+            <th class="px-30 py-2">
+              <span class="text-gray-100 font-semibold">Thành tiền</span>
+            </th>
+
+            <th class="px-16 py-2">
+              <span class="text-gray-100 font-semibold">Cài đặt</span>
+            </th>
+          </tr>
+        </thead>
+        <tbody class="bg-gray-200">
+          <tr class="bg-white border-b-2 border-gray-200">
+            <td class="px-10 py-2">
+              <p>1</p>
+            </td>
+            <td class="px-16 py-2 flex flex-row items-center">
+              <img class="h-10 w-10 object-cover " src="https://randomuser.me/api/portraits/men/38.jpg" alt="" />
+            </td>
+            <td>
+              <span class="text-center ml-2 font-semibold">Tên sản phẩm</span>
+            </td>
+            
+            <td class="px-16 py-2">
+              <span>100000 /vnđ</span>
+            </td>
+            <td class="px-30 py-2">
+              <span>120000 /vnđ</span>
+            </td>
+
+            <td class="px-16 py-2">
+              <span class="text-yellow-500 flex">
+                  <a href="" type="button"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-700 mx-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z"/>
+                    <path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd"/>
+                  </svg></a>
+                 <a href="" type="button"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-red-700" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
+                 </svg></a>
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  {{> footer}}
+</body>
+</html>
+<style type="text/css">
+  #hr1{
+    margin-top: 10px;
+    width: 100%;
+  }
+</style>
+<!--
+  This example requires Tailwind CSS v2.0+ 
+  
+  This example requires some changes to your config:
+  
+  ```
+  // tailwind.config.js
+  module.exports = {
+    // ...
+    plugins: [
+      // ...
+      require('@tailwindcss/aspect-ratio'),
+    ],
+  }
+  ```
+-->

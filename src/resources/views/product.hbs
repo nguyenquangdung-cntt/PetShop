@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/app.css">
+  <script src="/js/app.js"></script>
+  <link rel="stylesheet" href="/font-web/css/all.css">
+  <link rel="stylesheet" href="/font-web/css/fontawesome.css">
+  <link rel="stylesheet" href="/font-web/css/brands.css">
+  <link rel="stylesheet" href="/font-web/css/solid.css">
+  <link rel="shortcut icon" href="/img/icon.jpg" type="image/x-icon">
+  <title>Pet Shop</title>
+</head>
+<body>
+  <div class="flex">
+    <div id="nav-productDetail" class="flex w-2/5 md:w-1/4 h-screen bg-white">
+      <div class="mx-auto py-10">
+        <h1 class="text-2xl font-bold mb-10 cursor-pointer text-[#EC5252] duration-150" style="color: #D2691E;"><a href="/">Pet Shop</a></h1>
+        <ul>
+          <li class="flex space-x-2 mt-10 cursor-pointer hover:text-[#EC5252] duration-150">
+            <a href="/" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"><i class="fas fa-home"></i> Home</a>
+          </li>
+          <li class="flex space-x-2 mt-10 cursor-pointer hover:text-[#EC5252] duration-150">
+            <a href="/product/Cat" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"><i class="fas fa-cat"></i> Shop Cat</a>
+          </li>
+          <li class="flex space-x-2 mt-10 cursor-pointer hover:text-[#EC5252] duration-150">
+            <a href="/product/Dog" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"><i class="fas fa-dog"></i> Shop Dog</a>
+          </li>
+          <li class="flex space-x-2 mt-10 cursor-pointer hover:text-[#EC5252] duration-150">
+            <a href="/buy" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"><i class="fas fa-shopping-cart"></i> Giỏ hàng</a>
+          </li>
+          <li class="flex space-x-2 mt-10 cursor-pointer hover:text-[#EC5252] duration-150">
+            <a href="/login" class="block w-full px-5 py-3 text-center font-medium text-yellow-600 hover:bg-gray-100"><i class="fas fa-user-circle"></i> Login </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div id="content-PD" class="bg-white">
+      <div class="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
+        <h2 class="text-2xl font-extrabold tracking-tight text-gray-900">Sản phẩm</h2>
+        <hr id="hr1" align="left" width="210px" size="1px" color="darkgrey"/>
+        <hr id="hr2" align="left" width="210px" size="1px" color="darkgrey"/>
+
+        <div class="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+          {{#each products}}
+          <a href="/sanpham/{{this.tensp}}" class="group">
+            <div class="w-full aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
+              <img src="/img/{{this.hinh}}" alt="sản phẩm" class="w-full h-full object-center object-cover group-hover:opacity-75">
+            </div>
+            <h3 class="mt-4 text-sm text-gray-700">{{this.tensp}}</h3>
+            <p class="mt-1 text-lg font-medium text-gray-900">{{this.giasp}} /vnđ</p>
+          </a>
+          {{/each}}
+
+          <!-- More products... -->
+        </div>
+      </div>
+    </div>
+  </div>
+  {{> footer}}
+</body>
+</html>
+<style type="text/css">
+  #hr1{
+    margin-top: 10px;
+    width: 100%;
+  }
+  #hr2{
+    margin-top: 20px;
+    width: 100%;
+  }
+</style>
+<!--
+  This example requires Tailwind CSS v2.0+ 
+  
+  This example requires some changes to your config:
+  
+  ```
+  // tailwind.config.js
+  module.exports = {
+    // ...
+    plugins: [
+      // ...
+      require('@tailwindcss/aspect-ratio'),
+    ],
+  }
+  ```
+-->
